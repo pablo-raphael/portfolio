@@ -1,0 +1,14 @@
+{
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "pablo-dev-portfolio",
+          "configurations": {
+            "web": "1:80166122664:web:2d961b259c1a7cd5fdbe9d"
+          }
+        }
+      }
+    }
+  }
+}
