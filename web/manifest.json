@@ -1,11 +1,11 @@
 {
-    "name": "portfolio",
-    "short_name": "portfolio",
+    "name": "Pablo Raphael Portfolio",
+    "short_name": "Pablo Portfolio",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "Professional developer portfolio built with Flutter.",
+    "background_color": "#2F3138",
+    "theme_color": "#F2B352",
+    "description": "Portfolio of Pablo Raphael. Projects, skills, experience, and ways to get in touch.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
