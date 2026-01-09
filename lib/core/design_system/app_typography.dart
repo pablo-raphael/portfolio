@@ -11,6 +11,7 @@ class AppTypography {
   static const double bodyMediumSize = 14;
   static const double bodySmallSize = 13;
   static const double bodyTinySize = 12;
+  static const double portfolioTitleSize = 20;
   static const double headingHeight = 1.1;
   static const double bodyLargeHeight = 1.7;
   static const double bodyMediumHeight = 1.6;

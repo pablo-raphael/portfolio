@@ -30,7 +30,7 @@ class _PortfolioGridState extends State<PortfolioGrid> {
         final isCompact = AppLayout.isMobile(constraints.maxWidth);
         final spacing = isCompact ? AppSpacing.md : AppSpacing.xl;
         const maxTileWidth = 380.0;
-        final aspectRatio = isCompact ? 1.25 : 1.5;
+        const aspectRatio = 1.5;
 
         return GridView.builder(
           shrinkWrap: true,
