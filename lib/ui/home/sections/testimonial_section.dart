@@ -154,17 +154,21 @@ class _TestimonialSectionState extends State<TestimonialSection> {
         effectiveTextStyle,
         contentWidth,
       );
+      final authorTextWidth = math.max(
+        0.0,
+        contentWidth - authorAvatarSize - AppSpacing.md,
+      );
       final nameHeight = _measureTextHeight(
         context,
         item.author.name,
         nameStyle,
-        contentWidth,
+        authorTextWidth,
       );
       final roleHeight = _measureTextHeight(
         context,
         item.author.role,
         roleStyle,
-        contentWidth,
+        authorTextWidth,
       );
       final authorTextHeight = nameHeight + nameRoleSpacing + roleHeight;
       final authorRowHeight = math.max(authorAvatarSize, authorTextHeight);

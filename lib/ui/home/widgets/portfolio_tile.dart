@@ -64,62 +64,63 @@ class PortfolioTile extends StatelessWidget {
                       ),
                     ),
                   ),
-            AnimatedOpacity(
-              duration: AppDurations.fast,
-              opacity: isHovered ? 1 : 0,
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [overlayTop, overlayBottom],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                ),
-                padding: const EdgeInsets.all(AppSpacing.lg),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      item.title,
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: AppTypography.portfolioTitleSize,
-                      ),
-                      textAlign: TextAlign.center,
+            IgnorePointer(
+              ignoring: !isHovered,
+              child: AnimatedOpacity(
+                duration: AppDurations.fast,
+                opacity: isHovered ? 1 : 0,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [overlayTop, overlayBottom],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
                     ),
-                    const SizedBox(height: AppSpacing.sm),
-                    Flexible(
-                      child: _AutoEllipsisText(
-                        item.description,
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Colors.white70,
-                          height: 1.4,
+                  ),
+                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        item.title,
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                          fontSize: AppTypography.portfolioTitleSize,
                         ),
                         textAlign: TextAlign.center,
                       ),
-                    ),
-                    const SizedBox(height: AppSpacing.md),
-                    if (sourceUri != null)
-                      SizedBox(
-                        height: 30,
-                        child: MouseRegion(
-                          cursor: SystemMouseCursors.click,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: AppSpacing.lg,
-                              ),
-                              textStyle: Theme.of(context).textTheme.bodySmall
-                                  ?.copyWith(fontWeight: FontWeight.w600),
-                            ),
-                            onPressed: () => launchExternalUri(sourceUri),
-                            child: Text(ctaLabel),
-                          ),
+                      const SizedBox(height: AppSpacing.sm),
+                      Flexible(
+                        child: _AutoEllipsisText(
+                          item.description,
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(color: Colors.white70, height: 1.4),
+                          textAlign: TextAlign.center,
                         ),
                       ),
-                  ],
+                      const SizedBox(height: AppSpacing.md),
+                      if (sourceUri != null)
+                        SizedBox(
+                          height: 30,
+                          child: MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: AppSpacing.lg,
+                                ),
+                                textStyle: Theme.of(context).textTheme.bodySmall
+                                    ?.copyWith(fontWeight: FontWeight.w600),
+                              ),
+                              onPressed: () => launchExternalUri(sourceUri),
+                              child: Text(ctaLabel),
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
               ),
             ),
