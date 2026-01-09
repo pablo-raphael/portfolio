@@ -332,10 +332,13 @@ class _TestimonialSectionState extends State<TestimonialSection> {
                                   horizontal: cardPadding,
                                   vertical: cardShadowSpace,
                                 ),
-                                child: TestimonialCard(
-                                  item: items[index],
-                                  isMobile: isMobile,
-                                  showFullText: index == safeIndex,
+                                child: IgnorePointer(
+                                  ignoring: index != safeIndex,
+                                  child: TestimonialCard(
+                                    item: items[index],
+                                    isMobile: isMobile,
+                                    showFullText: index == safeIndex,
+                                  ),
                                 ),
                               ),
                               builder: (context, child) {
